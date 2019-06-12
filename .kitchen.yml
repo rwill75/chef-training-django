@@ -9,12 +9,16 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
 
+### Comment/Uncomment to test your cookbook against chef-client 13 vs 14
+  product_name: chef
+  product_version: 14.12.9
+  channel: stable
+
 verifier:
   name: inspec
 
 platforms:
   - name: ubuntu-16.04
-  - name: centos-7
 
 suites:
   - name: default
